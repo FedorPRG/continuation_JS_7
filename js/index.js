@@ -6,7 +6,9 @@ containerEl.addEventListener("click", (event) => {
     event.target.classList.contains("buy") ||
     event.target.parentNode.classList.contains("buy")
   ) {
-    const idProduct = event.target.dataset.id;
+    const idProduct = event.target.dataset.id
+      ? event.target.dataset.id
+      : event.target.parentNode.dataset.id;
     async function fetchDataCart() {
       try {
         const response = await fetch("./js/dataIndex.json");

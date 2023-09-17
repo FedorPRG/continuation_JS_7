@@ -1,0 +1,152 @@
+@import 'vars';
+@import 'mixins';
+@import 'header';
+@import 'subscribe';
+@import 'footer';
+@import 'breadcrumbs';
+
+.center {
+    padding-left: calc(50% - $widthSite / 2);
+    padding-right: calc(50% - $widthSite / 2);
+}
+
+%flexCC {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.top-head {
+    @extend %flexCC;
+    justify-content: space-between;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #F8F3F4;
+
+    &_heading {
+        color: $colorMain;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 29px;
+    }
+}
+
+.registration__box {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 64px;
+    padding-bottom: 96px;
+    gap: 128px;
+}
+
+.registration {
+
+    &__form {
+        width: 360px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        &__heading {
+            color: #222;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 19px;
+        }
+
+        &__input {
+            width: 360px;
+            height: 45px;
+            border: 1px solid #A4A4A4;
+            padding: 0 17px 0 17px;
+            color: #222;
+            font-size: 13px;
+            font-weight: 300;
+            box-sizing: border-box;
+        }
+
+        &__input::placeholder {
+            color: #B1B1B1;
+        }
+
+        &__check {
+            display: flex;
+            gap: 10px;
+
+            &>label {
+                color: #000;
+                font-size: 11px;
+                font-weight: 300;
+                line-height: 35px;
+                padding-right: 10px;
+            }
+        }
+
+        &__text {
+            color: #B1B1B1;
+            font-size: 13px;
+            font-weight: 300;
+            line-height: 16px;
+            margin-top: -5px;
+            margin-bottom: 18px;
+        }
+
+        &__button {
+            padding-left: 29px;
+            width: 167px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            color: $colorTextWhite;
+            background-color: $colorMain;
+            border: 1px solid #A4A4A4;
+            transition: all .3s;
+            cursor: pointer;
+            color: #FFF;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 17px;
+            transition: all .3s;
+
+            &:hover {
+                background: $colorTextWhite;
+                color: $colorMain;
+            }
+
+            &:hover path {
+                fill: $colorMain;
+            }
+
+        }
+    }
+
+    &__right {
+        &__heading {
+            color: #000;
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 29px;
+            margin-bottom: 22px;
+        }
+
+        &__text {
+            color: #000;
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 29px;
+            padding-bottom: 5px;
+        }
+
+        &__box {
+            display: flex;
+            gap: 23px;
+            align-items: center;
+            margin-top: 16px;
+            margin-bottom: 16px;
+        }
+    }
+}
+
+@import 'adaptation';

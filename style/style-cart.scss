@@ -1,0 +1,232 @@
+@import "vars";
+@import "mixins";
+@import "header";
+@import "subscribe";
+@import "footer";
+@import "breadcrumbs";
+
+.center {
+  padding-left: calc(50% - $widthSite / 2);
+  padding-right: calc(50% - $widthSite / 2);
+}
+
+%flexCC {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.top-head {
+  @extend %flexCC;
+  justify-content: space-between;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #f8f3f4;
+
+  &_heading {
+    color: $colorMain;
+    font-size: 24px;
+  }
+}
+
+.cart_box {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 96px;
+
+  &_left {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    // width: 652px;
+    margin-bottom: 128px;
+
+    &_card {
+      width: 735px;
+      height: 306px;
+      display: flex;
+      position: relative;
+      box-shadow: 17px 19px 24px 0px #00000021;
+      &_img {
+        width: 262px;
+        height: 306px;
+      }
+
+      &_info {
+        max-width: 390px;
+        margin-right: 182px;
+        padding: 22px 97px 62px 32px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+
+        &_heading {
+          color: $colorBackBlack;
+          font-size: 24px;
+          font-weight: 400;
+          margin-bottom: 36px;
+        }
+
+        & p {
+          color: #656565;
+          font-size: 18px;
+          font-weight: 400;
+        }
+
+        &_quantity {
+          color: #575757;
+          font-size: 22px;
+          font-weight: 400;
+        }
+
+        & span {
+          color: $colorMain;
+        }
+
+        &_quantity {
+          display: flex;
+          gap: 24px;
+
+          & p {
+            padding: 1px 17px 2px 16px;
+            border: 1px solid #eaeaea;
+          }
+        }
+      }
+
+      &_closed {
+        position: absolute;
+        right: 0px;
+        cursor: pointer;
+        padding: 28px 24px;
+      }
+
+      &_closed:hover path {
+        fill: $colorMain;
+      }
+    }
+
+    &_button {
+      display: flex;
+      gap: 224px;
+
+      & a {
+        text-align: center;
+        width: 253px;
+        color: #000;
+        font-size: 14px;
+        font-weight: 300;
+        border: 1px solid #a4a4a4;
+        padding: 15px 0;
+        transition: all 0.3s;
+      }
+
+      & a:hover {
+        color: $colorTextWhite;
+        background: $colorMain;
+      }
+    }
+  }
+
+  &_right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    &_adress {
+      display: flex;
+      flex-direction: column;
+      gap: 21px;
+      margin-bottom: 57px;
+
+      & p {
+        color: #222;
+        font-size: 16px;
+        font-weight: 300;
+      }
+
+      & input {
+        width: 360px;
+        height: 45px;
+        border: 1px solid #a4a4a4;
+        padding: 0 17px 0 17px;
+        color: #222;
+        font-size: 13px;
+        font-weight: 300;
+        box-sizing: border-box;
+        // outline: none;
+      }
+
+      & input::placeholder {
+        color: #b1b1b1;
+      }
+
+      & button {
+        width: 101px;
+        height: 35px;
+        background: #fff;
+        color: #4a4a4a;
+        font-size: 11px;
+        font-weight: 300;
+        border: 1px solid #a4a4a4;
+        transition: all 0.3s;
+        cursor: pointer;
+
+        &:hover {
+          background: $colorMain;
+          color: $colorTextWhite;
+        }
+      }
+    }
+
+    &_checkout {
+      width: 360px;
+      height: 214px;
+      background: #f5f3f3;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      padding: 39px 43px 43px;
+      box-sizing: border-box;
+
+      &_sub {
+        color: #4a4a4a;
+        font-size: 11px;
+        font-weight: 400;
+        margin-bottom: 12px;
+      }
+
+      &_grand {
+        color: #222;
+        font-size: 16px;
+        font-weight: 300;
+        margin-bottom: 21px;
+
+        & span {
+          color: $colorMain;
+        }
+      }
+
+      & a {
+        margin-top: 17px;
+        background: $colorMain;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 300;
+        padding: 14px 40px;
+        transition: all 0.3s;
+        border: 1px solid $colorMain;
+      }
+
+      &_button:hover {
+        background: #f5f3f3;
+        color: $colorMain;
+        border: 1px solid #4a4a4a;
+      }
+    }
+  }
+}
+
+@import "adaptation";

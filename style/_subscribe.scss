@@ -1,0 +1,90 @@
+.subscribe {
+    padding: 97px 0 153px;
+    display: flex;
+    justify-content: center;
+    gap: 327px;
+    align-items: flex-end;
+    background: url(../img/subscribe_back2.png) no-repeat center,
+        url(../img/subscribe_back1.png) no-repeat center;
+    background-size: cover;
+
+    &_info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 360px;
+        text-align: center;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        color: $colorBackBlack;
+
+        & span {
+            font-style: italic;
+        }
+
+        &>p {
+            margin-top: 30px;
+        }
+    }
+
+    &_content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: $colorTextBlack;
+
+        &_heading {
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 167.2%;
+        }
+
+        &_text {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 30.1px;
+        }
+
+        &_form {
+            display: flex;
+            margin-top: 32px;
+        }
+
+        &_input {
+            background: #E1E1E1;
+            height: 49px;
+            width: 256px;
+            border-radius: 25px 0 0 25px;
+            padding-left: 25px;
+            padding-right: 20px;
+            box-sizing: border-box;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            color: $colorTextBlack;
+            border: none;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        &_button {
+            background: $colorMain;
+            height: 49px;
+            width: 100px;
+            border-radius: 0 25px 25px 0;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            color: $colorText;
+            border: none;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}

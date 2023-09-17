@@ -1,0 +1,164 @@
+@import "vars";
+@import "mixins";
+// @import 'advantages_animation';
+@import "header";
+@import "product-box";
+@import "advantages";
+@import "subscribe";
+@import "footer";
+@import "adaptation";
+
+.center {
+  padding-left: calc(50% - $widthSite / 2);
+  padding-right: calc(50% - $widthSite / 2);
+}
+
+%flexCC {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.title_site {
+  background: #f1e4e6;
+  display: flex;
+  gap: 1vw;
+  padding-left: calc(50% - 800px);
+  padding-right: calc(50% - 800px);
+  margin-bottom: 65px;
+
+  &_content {
+    margin-top: 290px;
+    border-left: 12px solid $colorMain;
+
+    &_header {
+      font-weight: 900;
+      font-size: 48px;
+      line-height: 58px;
+      color: $colorTextBlack;
+      margin-left: 16px;
+    }
+
+    &_text_box {
+      margin-left: 16px;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 38px;
+      color: $colorTextBlack;
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 12px;
+    }
+
+    &_text_pink {
+      color: $colorMain;
+    }
+  }
+}
+
+.discounts {
+  display: grid;
+  grid-template-columns: repeat(3, 360px);
+  gap: 30px;
+  margin-bottom: 96px;
+
+  &_item {
+    position: relative;
+    height: 260px;
+    transition: transform 1s;
+
+    &_img,
+    &_img_big {
+      position: relative;
+    }
+
+    &_back,
+    &_back_big {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &_content {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &_text {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      text-align: center;
+      color: $colorText;
+    }
+
+    &_heading {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 19px;
+      text-align: center;
+      color: $colorMain;
+    }
+
+    &_big {
+      grid-column: span 3;
+      height: 180px;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.button_browse_all_product {
+  display: flex;
+  justify-content: center;
+  margin: 48px 0 61px 0;
+
+  &_link {
+    display: block;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: $colorMain;
+    border: 1px solid #ff6a6a;
+    padding: 14px 38px;
+    text-decoration: none;
+    transition: all 0.3s;
+
+    &:hover {
+      color: #e5e5e5;
+      background-color: $colorMain;
+    }
+  }
+}
+
+.card_box {
+  padding: 96px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  &_title {
+    color: $colorBackBlack;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+}
+.none {
+  display: none;
+}
+@import "adaptation";

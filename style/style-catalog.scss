@@ -1,0 +1,268 @@
+@import 'vars';
+@import 'breadcrumbs';
+@import 'advantages_animation';
+@import 'header';
+@import 'product-box';
+@import 'mixins';
+@import 'advantages';
+@import 'subscribe';
+@import 'footer';
+
+%flexCC {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.center {
+    padding-left: calc(50% - $widthSite / 2);
+    padding-right: calc(50% - $widthSite / 2);
+}
+
+.top-head {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: #F8F3F4;
+
+    &_heading {
+        color: $colorMain;
+        font-size: 24px;
+    }
+}
+
+.filter-sort {
+    height: 94px;
+    margin-top: 39px;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    gap: 30px;
+}
+
+.filter {
+    width: 360px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 10;
+    transition: all .3s;
+
+    &_svgBig {
+        display: none;
+    }
+
+    &_content {
+        background-color: #fff;
+        padding: 0 16px 16px 16px;
+    }
+
+    &[open] {
+        background: #FFF;
+        box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+    }
+
+    &[open] .filter_content {
+        min-width: 137px;
+        background: #FFF;
+        box-shadow: 0 40px 35px rgba(0, 0, 0, 0.21);
+    }
+
+    &[open] .filter_heading {
+        padding-left: 16px;
+        color: $colorMain;
+    }
+
+    &[open] path {
+        fill: $colorMain;
+    }
+
+    &_summary {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        padding-top: 12px;
+
+        &>svg:hover {
+            cursor: pointer;
+        }
+
+        &>svg:hover path {
+            fill: $colorMain;
+        }
+    }
+
+    &_heading {
+        color: #000;
+        font-size: 14px;
+        font-weight: 600;
+
+        &:hover {
+            cursor: pointer;
+            color: $colorMain;
+        }
+    }
+
+    &_item {
+        margin-top: 16px;
+    }
+
+    &_link-box {
+        display: flex;
+        flex-direction: column;
+        gap: 11px;
+        padding: 24px 16px;
+    }
+
+    &_link {
+        color: #6F6E6E;
+        font-size: 14px;
+        font-weight: 400;
+
+        &:hover {
+            cursor: pointer;
+            color: $colorMain;
+        }
+    }
+
+    &_head {
+        color: #6F6E6E;
+        font-size: 14px;
+        padding: 8px 11px 11px 11px;
+        border-bottom: 1px solid #EBEBEB;
+        border-left: 5px solid $colorMain;
+
+        &:hover {
+            color: $colorMain;
+            cursor: pointer;
+        }
+    }
+
+    &_item[open] .filter_head {
+        color: $colorMain;
+    }
+}
+
+.sort {
+    display: flex;
+    padding-top: 12px;
+    gap: 18px;
+
+
+    &_details {
+        position: relative;
+
+
+        &[open]svg {
+            rotate: 180deg;
+        }
+
+        &[open] span {
+            color: $colorMain;
+        }
+
+        &[open]path {
+            fill: $colorMain;
+        }
+    }
+
+    &_summary {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &>svg:hover {
+            cursor: pointer;
+        }
+
+        &>svg:hover path {
+            fill: $colorMain;
+        }
+    }
+
+    &_heading {
+        color: #6F6E6E;
+        font-size: 14px;
+
+        &:hover {
+            cursor: pointer;
+            color: $colorMain;
+        }
+    }
+
+    &_box {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        background: #FFF;
+        box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);
+        padding: 7px 30px 11px 9px;
+        position: absolute;
+        left: -9px;
+        top: 22px;
+        z-index: 10;
+    }
+
+    &_check {
+        display: flex;
+        gap: 9px;
+        align-items: center;
+        color: #6F6E6E;
+        font-size: 14px;
+    }
+
+    &_checkbox:checked~label {
+        color: $colorMain;
+    }
+}
+
+.box-page {
+    @extend %flexCC;
+    margin-top: 48px;
+    margin-bottom: 97px;
+
+    &_content {
+        padding: 15px;
+        @extend %flexCC;
+        gap: 16px;
+        border: 1px solid #ebebeb;
+
+        & svg {
+            cursor: pointer;
+        }
+
+        & a {
+            color: #c4c4c4;
+            font-size: 16px;
+            font-weight: 300;
+            word-break: 200px;
+            cursor: pointer;
+            margin-bottom: 5px;
+        }
+
+        & a:nth-last-child(2)::before {
+            content: '...';
+            margin-left: -16px;
+        }
+
+        & a:hover {
+            color: $colorMain;
+        }
+
+        & svg:hover path {
+            fill: $colorMain;
+        }
+    }
+}
+
+@import 'adaptation';
+
+@media (max-width: 1140px) and (min-width: 768px) {
+    .product-box_item:last-child {
+        display: none;
+    }
+}

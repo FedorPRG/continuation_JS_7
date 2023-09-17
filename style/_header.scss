@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    min-height: 75px;
+    background: $colorBackBlack;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+
+    &_left {
+        display: flex;
+        align-items: flex-end;
+        gap: 41px;
+    }
+
+    &_right {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        gap: 33px;
+    }
+}
+
+#check {
+    position: absolute;
+    left: -999999px;
+    visibility: hidden;
+}
+
+
+#check:checked~.nav_menu_box {
+    right: 0;
+}
+
+.nav_menu {
+    & label {
+        cursor: pointer;
+    }
+
+    &_box {
+        margin-top: -1px;
+        padding: 32px 82px 32px 0;
+        background: $colorText;
+        position: absolute;
+        top: 76px;
+        right: -233px;
+        transition: right 0.6s;
+        display: flex;
+        flex-direction: column;
+        z-index: 100;
+
+        &_title {
+            margin: 0 0 4px 33px;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 17px;
+            color: #000000;
+        }
+
+        &_heading {
+            margin: 20px 0 1px 32px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            color: $colorMain;
+
+            &:hover {
+                color: #000000;
+            }
+        }
+
+        &_links {
+            display: flex;
+            flex-direction: column;
+            gap: 11px;
+            margin-top: 12px;
+
+            &_item {
+                margin: 0 0 0 54px;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 17px;
+                color: #6F6E6E;
+
+                &:hover {
+                    color: $colorMain;
+                }
+            }
+        }
+    }
+}
+
+.cart {
+    position: relative;
+}
+
+.item_in_cart::after {
+    position: absolute;
+    top: -8px;
+    right: -9px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 19px;
+    height: 19px;
+    border-radius: 8.5px;
+    background-color: $colorMain;
+    color: $colorText;
+    content: '5';
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+}

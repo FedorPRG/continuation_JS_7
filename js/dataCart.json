@@ -1,0 +1,19 @@
+[
+    {
+        "img":"../img/shopping_cart_card1.jpg",
+        "name":"MANGO PEOPLE <br> T-SHIRT",
+        "price":"300",
+        "color":"Red",
+        "size":"Xl",
+        "quantity":"2"
+    },
+    {
+        "img":"../img/shopping_cart_card2.jpg",
+        "name":"MANGO PEOPLE <br> T-SHIRT",
+        "price":"300",
+        "color":"Red",
+        "size":"Xl",
+        "quantity":"2"
+    }
+
+]

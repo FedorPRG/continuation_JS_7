@@ -1,0 +1,23 @@
+.breadcrumbs {
+    &__ul {
+        list-style: none;
+        display: flex;
+    }
+
+    &__li:not(:last-child) ::after {
+        content: "/";
+        padding: 0 10px;
+    }
+
+    &__link {
+        color: #636363;
+
+        &:hover {
+            color: $colorMain;
+        }
+    }
+
+    &__li:last-child>a {
+        color: $colorMain;
+    }
+}

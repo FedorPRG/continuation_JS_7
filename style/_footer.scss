@@ -1,0 +1,39 @@
+.footer {
+    background: $colorBackBlack;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+    &_left_text {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: $colorTextWhite;
+    }
+
+    &_right {
+        display: flex;
+        gap: 7.3px;
+    }
+}
+
+.social_box {
+    width: 32px;
+    height: 32px;
+    background-color: $colorText;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s;
+
+    &:hover {
+        background-color: $colorMain;
+    }
+
+    &:hover path {
+        fill: $colorText;
+    }
+}

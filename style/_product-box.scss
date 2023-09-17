@@ -1,0 +1,121 @@
+@import "vars";
+
+.product-box {
+  &_title {
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+    color: $colorTextBlack;
+  }
+
+  &_text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #9f9f9f;
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  &_container {
+    display: grid;
+    grid-template-columns: repeat(3, 360px);
+    gap: 30px;
+  }
+
+  &_item {
+    background: #f8f8f8;
+    position: relative;
+
+    &_hover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: none;
+    }
+
+    &_content {
+      margin: 25px 30px 19px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    &_heading {
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 16px;
+      color: #000000;
+      text-decoration: none;
+    }
+
+    &_heading:hover {
+      color: $colorMain;
+    }
+
+    &_text {
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 17px;
+      color: #5d5d5d;
+    }
+
+    &_price {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      color: $colorMain;
+    }
+
+    &:hover .product-box_item_hover {
+      display: block;
+    }
+  }
+
+  &_item2 {
+    position: relative;
+  }
+
+  &_item2_2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 108px;
+    margin-top: 9px;
+  }
+}
+
+.add_to_cart {
+  position: absolute;
+  top: calc(50% - 22px);
+  left: calc(50% - 69px);
+  width: 138px;
+  height: 43px;
+  border: 1px solid $colorText;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  justify-content: center;
+  cursor: pointer;
+
+  &_text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: $colorText;
+  }
+
+  &:hover {
+    border: 1px solid $colorMain;
+  }
+
+  &:hover path {
+    fill: $colorMain;
+  }
+
+  &:hover &_text {
+    color: $colorMain;
+  }
+}

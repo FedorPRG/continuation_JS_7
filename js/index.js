@@ -1,9 +1,11 @@
-// const cartEl = document.querySelectorAll(".add_to_cart");
 const containerEl = document.querySelector(".product-box_container");
 let productEl = "";
 const cartEl = document.querySelector(".card_box");
 containerEl.addEventListener("click", (event) => {
-  if (event.target.classList.contains("buy")) {
+  if (
+    event.target.classList.contains("buy") ||
+    event.target.parentNode.classList.contains("buy")
+  ) {
     const idProduct = event.target.dataset.id;
     async function fetchDataCart() {
       try {
@@ -12,8 +14,6 @@ containerEl.addEventListener("click", (event) => {
           throw new Error("Не удалось получить данные с data JSON");
         }
         const data = await response.json();
-        // const cartEl = document.querySelector(".card_box");
-        // let productEl = "";
         data.forEach(({ id, img, name, price, color, size, quantity }) => {
           if (id == idProduct) {
             productEl = `
@@ -41,7 +41,7 @@ containerEl.addEventListener("click", (event) => {
           }
           cartEl.insertAdjacentHTML("beforeend", productEl);
         });
-        if (productEl) {
+        if (cartEl.querySelector(".cart_box_left_card")) {
           cartEl.classList.remove("none");
         }
         const btns = document.querySelectorAll(".cart_box_left_card_closed");
